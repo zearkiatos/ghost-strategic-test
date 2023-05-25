@@ -1,0 +1,31 @@
+{
+  "name": "ghost-strategic-test",
+  "version": "1.0.0",
+  "description": "It is a test strategic with manual test, rippers ��🐒🤖, VRT and e2e",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/ghost-strategic-test.git"
+  },
+  "keywords": [
+    "Test",
+    "manual",
+    "rippers",
+    "e2e",
+    "vrt",
+    "ghost",
+    "cypress"
+  ],
+  "author": "Team 10",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/ghost-strategic-test/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/ghost-strategic-test#readme",
+  "dependencies": {
+    "cypress": "^12.13.0"
+  }
+}

@@ -1,0 +1,1 @@
+FROM ghost:3.41.1-alpine
