@@ -8,4 +8,4 @@ Este repositorio contiene los artefactos de código para la ejecución de la est
 [![Cypress](https://img.shields.io/badge/Cypress-027780?style=for-the-badge&logo=cypress&logoColor=white&labelColor=000000)]()
 
 # Wiki de la estrategia
-[Wiki](https://github.com/zearkiatos/ghost-strategic-test/wiki)
+En el siguiente enlace puede encontrar la [Wiki](https://github.com/zearkiatos/ghost-strategic-test/wiki) de la estrategia de pruebas.
