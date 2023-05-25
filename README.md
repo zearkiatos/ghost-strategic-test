@@ -1,6 +1,6 @@
 # Descripción
 Este repositorio contiene los artefactos de código para la ejecución de la estrategia de pruebas del CMS Ghost en su versión 3.41.1 haciendo uso de pruebas manuales, rippers 💻🐒🤖, pruebas de regresión visual y pruebase de extremo a extremo.
-It is a test strategic with manual test, rippers , VRT and e2e
+
 
 # Herramientas usadas
 [![JavaScript](https://img.shields.io/badge/javascript-ead547?style=for-the-badge&logo=javascript&logoColor=white&labelColor=000000)]()
