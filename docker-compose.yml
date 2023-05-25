@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ghost-web
+    volumes:
+      - "./ghost/content:/var/lib/ghost/content"
+    env_file:
+      - .env.ghost
+    ports:
+      - "2368:2368"
+    tty: true
