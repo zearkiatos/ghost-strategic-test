@@ -5,7 +5,7 @@ require('cypress-plugin-tab');
 var fs = require('fs');
 var faker = require('faker');
 
-let url = 'http://localhost:2368/ghost/#/editor/page';
+let url = 'http://localhost:2368/ghost/';
 const appName = Cypress.env('appName')|| "your app";
 const events = Cypress.env('events')|| 100;
 const delay = Cypress.env('delay') || 100;
