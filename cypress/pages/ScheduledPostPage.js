@@ -37,14 +37,7 @@ class ScheduledPostPage {
       });
 
   markdownOption = () =>
-    cy
-      .get(
-        "div.f8.lh-heading.darkgrey.tracked-1.fw4.ma0.ml4.flex-grow-1.truncate"
-      )
-      .then(($selects) => {
-        let selected = $selects.get(1);
-        return selected;
-      });
+    cy.get("div[title='Markdown']")
 
   htmlOption = () =>
     cy
@@ -93,7 +86,16 @@ class ScheduledPostPage {
   };
 
   clickOnAddFeatureButton = () => {
-    this.addFeatureButton().click();
+    this.addFeatureButton().click({ force: true });
+  };
+
+  setTimeWithCurrent = () => {
+    const date = new Date();
+    let hour = date.getUTCHours();
+    const minutes = date.getUTCMinutes();
+
+    this.inputTime().clear();
+    this.inputTime().type(`${hour}:${minutes.toString().padStart(2, "0")}`);
   };
 
   setTime = (extraMinutes = 10) => {
@@ -115,7 +117,7 @@ class ScheduledPostPage {
   };
 
   selectMarkdownOption = () => {
-    this.markdownOption().click();
+    this.markdownOption().click({ force: true });
   };
 
   typeOnMarkdownEditor = (markdownText) => {
@@ -139,7 +141,7 @@ class ScheduledPostPage {
   typeOnBookmark = (url) => {
     this.bookmark().click();
     this.bookmark().type(url);
-  }
+  };
 }
 
 export default ScheduledPostPage;
