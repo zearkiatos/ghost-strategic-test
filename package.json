@@ -4,7 +4,18 @@
   "description": "It is a test strategic with manual test, rippers ��🐒🤖, VRT and e2e",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:ci": "./node_modules/.bin/cypress run --headless",
+    "cypress:e2e": "./node_modules/.bin/cypress run --spec=cypress/e2e/e2e-test/*",
+    "cypress:monkey": "./node_modules/.bin/cypress run --spec=cypress/e2e/monkey/*",
+    "postcypress:e2e": "docker-compose down",
+    "precypress:e2e": "docker-compose up -d",
+    "postcypress:ci": "docker-compose down",
+    "precypress:ci": "docker-compose up -d",
+    "postcypress:monkey": "docker-compose down",
+    "precypress:monkey": "docker-compose up -d",
+    "postcypress:open": "docker-compose down",
+    "precypress:open": "docker-compose up -d"
   },
   "repository": {
     "type": "git",
