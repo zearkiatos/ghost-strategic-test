@@ -72,7 +72,7 @@ function randomTypeTitle() {
 }
 
 function randomTypeBody() {
-    cy.get('.koenig-editor__editor.__mobiledoc-editor.__has-no-content').then($selects => {
+    cy.get('.koenig-editor__editor.__mobiledoc-editor').then($selects => {
         var randomTitle = $selects.get(getRandomInt(0, $selects.length));
         if(!Cypress.dom.isHidden(randomTitle)) {
             cy.get(randomTitle).type(faker.lorem.paragraphs(), {force: true});
