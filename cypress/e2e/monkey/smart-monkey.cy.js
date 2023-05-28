@@ -737,7 +737,7 @@ describe( `${appName} under smarter monkeys`, function() {
         
     })
 
-    it.only(`smart monkey test de la aplicación ${appName} para la funcionalidad de SignIn`, function() {
+    it(`smart monkey test de la aplicación ${appName} para la funcionalidad de SignIn`, function() {
         if(!seed) seed = getRandomInt(0, Number.MAX_SAFE_INTEGER);
         
         cy.task('logStart', {"type":"monkey", "url":url, "seed":seed})
