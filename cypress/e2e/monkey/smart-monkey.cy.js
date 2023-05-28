@@ -696,6 +696,46 @@ describe( `${appName} under smarter monkeys`, function() {
         else cy.task('logPctNo100')
         
     })
+    it(`smart monkey test de la aplicación ${appName} para la funcionalidad de Tags`, function() {
+        if(!seed) seed = getRandomInt(0, Number.MAX_SAFE_INTEGER);
+        
+        cy.task('logStart', {"type":"monkey", "url":url, "seed":seed})
+        cy.log(`Seed: ${seed}`)
+        cy.task('genericLog', {"message":`Seed: ${seed}`})
+
+        let pcg = pct_clicks+pct_scrolls+pct_keys+pct_pgnav+pct_selectors+pct_spkeys+pct_actions+pct_browserChaos;
+        if(pcg === 100){
+
+            pending_events[0] = events*pct_clicks/100;
+            pending_events[1] = events*pct_scrolls/100;
+            pending_events[2] = events*pct_selectors/100;
+            pending_events[3] = events*pct_keys/100;
+            pending_events[4] = events*pct_spkeys/100;
+            pending_events[5] = events*pct_pgnav/100;
+            pending_events[6] = events*pct_browserChaos/100;
+            pending_events[7] = events*pct_actions/100;
+            url = 'http://localhost:2368/ghost/#/tags/new';
+            cy.visit(url).then((win)=>{   
+
+                cy.get('input[name="identification"]').type('teste2e@test.com')
+                cy.get('input[name="password"]').type('Teste2e12345*')
+                cy.get('button[id="ember12"]').click()
+                cy.wait(3000)
+
+                let d = win.document
+                curPageMaxY = Math.max( d.body.scrollHeight, d.body.offsetHeight, d.documentElement.clientHeight, d.documentElement.scrollHeight, d.documentElement.offsetHeight) - win.innerHeight
+                curPageMaxX = Math.max( d.body.scrollWidth, d.body.offsetWidth, d.documentElement.clientWidth, d.documentElement.scrollWidth, d.documentElement.offsetWidth) - win.innerWidth
+            })
+            cy.wait(1000)
+            //Add an event for each type of event in order to enter the else statement of randomEvent method
+            for(let i = 0; i < events + 7; i++){
+                evtIndex++
+                randomEvent()
+            }
+        }
+        else cy.task('logPctNo100')
+        
+    })
     
     afterEach(()=>{
         cy.task('logEnd')
